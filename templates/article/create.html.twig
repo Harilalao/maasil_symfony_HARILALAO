@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout article !{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        <fieldset>
+            <legend>Creer un nouveau Article </legend>
+            {{ form_row(form.titre) }}
+            {{ form_row(form.auteur) }}
+            {{ form_row(form.texte) }}
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </fieldset>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil !{% endblock %}
+
+{% block body %}
+        <div>
+            <h2>Listes des 5 dernier articles!</h2>
+        </div>
+    {% for article in articles %}
+        <div class="post-preview">
+            <a href="{{ path('show_article', {'id':article.id}) }}">
+                <h2 class="post-title">
+                    {{ article.titre }}
+                </h2>
+                <h5 class="post-subtitle">
+                    {{ article.texte }}.
+                </h5>
+            </a>
+            <p class="post-meta">Poste par
+                <a href="#">{{ article.auteur.nom }}</a>
+                le {{ article.createdAt|date('d/m/Y') }}</p>
+        </div>
+        <hr>
+    {% else %}
+        <div class="post-preview">
+           Il n'y as pas de nouveau article !
+        </div>
+    {% endfor %}
+
+    <!-- Pager -->
+    {#<div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">Ancien article &rarr;</a>
+    </div>#}
+{% endblock %}

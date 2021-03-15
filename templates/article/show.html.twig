@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Details d'un article !{% endblock %}
+
+{% block body %}
+    <div class="post-heading">
+        <h1>{{ article.titre }}</h1>
+        <p class="card-text">poste par, <span class="font-weight-bold">{{ article.auteur.nom }}</span> </p>
+        <p class="subheading">{{ article.texte }}</p>
+        <p>Cree le, <span class="font-weight-bold">{{ article.createdAt|date('d/m/Y') }}</span> </p>
+        <p>Date de modification, <span class="font-weight-bold">{{ article.updatedAt|date('d/m/Y') }}</span> </p>
+    </div>
+{% endblock %}
